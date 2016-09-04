@@ -12,7 +12,56 @@
 		FE2B48951D7B9AF9008083AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B48941D7B9AF9008083AE /* ViewController.m */; };
 		FE2B48971D7B9AF9008083AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2B48961D7B9AF9008083AE /* Assets.xcassets */; };
 		FE2B489A1D7B9AF9008083AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE2B48981D7B9AF9008083AE /* Main.storyboard */; };
+		FE2B4A3D1D7B9C87008083AE /* Changes.txt in Resources */ = {isa = PBXBuildFile; fileRef = FE2B4A081D7B9C87008083AE /* Changes.txt */; };
+		FE2B4A3E1D7B9C87008083AE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FE2B4A251D7B9C87008083AE /* .gitignore */; };
+		FE2B4A3F1D7B9C87008083AE /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FE2B4A261D7B9C87008083AE /* LICENSE.txt */; };
+		FE2B4A401D7B9C87008083AE /* app.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A281D7B9C87008083AE /* app.c */; };
+		FE2B4A411D7B9C87008083AE /* chart.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A291D7B9C87008083AE /* chart.c */; };
+		FE2B4A421D7B9C87008083AE /* content_types.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2A1D7B9C87008083AE /* content_types.c */; };
+		FE2B4A431D7B9C87008083AE /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2B1D7B9C87008083AE /* core.c */; };
+		FE2B4A441D7B9C87008083AE /* custom.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2C1D7B9C87008083AE /* custom.c */; };
+		FE2B4A451D7B9C87008083AE /* drawing.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2D1D7B9C87008083AE /* drawing.c */; };
+		FE2B4A461D7B9C87008083AE /* format.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2E1D7B9C87008083AE /* format.c */; };
+		FE2B4A471D7B9C87008083AE /* hash_table.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A2F1D7B9C87008083AE /* hash_table.c */; };
+		FE2B4A481D7B9C87008083AE /* packager.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A301D7B9C87008083AE /* packager.c */; };
+		FE2B4A491D7B9C87008083AE /* relationships.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A311D7B9C87008083AE /* relationships.c */; };
+		FE2B4A4A1D7B9C87008083AE /* shared_strings.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A321D7B9C87008083AE /* shared_strings.c */; };
+		FE2B4A4B1D7B9C87008083AE /* styles.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A331D7B9C87008083AE /* styles.c */; };
+		FE2B4A4C1D7B9C87008083AE /* theme.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A341D7B9C87008083AE /* theme.c */; };
+		FE2B4A4D1D7B9C87008083AE /* utility.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A351D7B9C87008083AE /* utility.c */; };
+		FE2B4A4E1D7B9C87008083AE /* workbook.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A361D7B9C87008083AE /* workbook.c */; };
+		FE2B4A4F1D7B9C87008083AE /* worksheet.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A371D7B9C87008083AE /* worksheet.c */; };
+		FE2B4A501D7B9C87008083AE /* xmlwriter.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A381D7B9C87008083AE /* xmlwriter.c */; };
+		FE2B4A511D7B9C87008083AE /* tmpfileplus.c in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A3B1D7B9C87008083AE /* tmpfileplus.c */; };
+		FE2B4A581D7B9E49008083AE /* HTCSVFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A541D7B9E49008083AE /* HTCSVFileHandler.m */; };
+		FE2B4A591D7B9E49008083AE /* HTXLSXFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */; };
+		FE2B4A5A1D7B9EA2008083AE /* XlsxReaderWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2B4A061D7B9C66008083AE /* XlsxReaderWriter.framework */; };
+		FEDB46311D7BA3F1003D885D /* ViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB46301D7BA3F1003D885D /* ViewControllerModel.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE2B4A011D7B9C66008083AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45B6E23A1A148F7500288A78;
+			remoteInfo = XlsxReaderWriter;
+		};
+		FE2B4A031D7B9C66008083AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45B6E2451A148F7500288A78;
+			remoteInfo = XlsxReaderWriterTests;
+		};
+		FE2B4A051D7B9C66008083AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22156D581C46B42500BB5779;
+			remoteInfo = "XlsxReaderWriter Mac";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FE2B488A1D7B9AF9008083AE /* CreatingXLSXFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatingXLSXFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +73,60 @@
 		FE2B48961D7B9AF9008083AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE2B48991D7B9AF9008083AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE2B489B1D7B9AF9008083AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XlsxReaderWriter.xcodeproj; path = HTSpreadSheetWrapper/XlsxReaderWriter/XlsxReaderWriter.xcodeproj; sourceTree = "<group>"; };
+		FE2B4A081D7B9C87008083AE /* Changes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changes.txt; sourceTree = "<group>"; };
+		FE2B4A0B1D7B9C87008083AE /* app.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = app.h; sourceTree = "<group>"; };
+		FE2B4A0C1D7B9C87008083AE /* chart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chart.h; sourceTree = "<group>"; };
+		FE2B4A0D1D7B9C87008083AE /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		FE2B4A0E1D7B9C87008083AE /* content_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = content_types.h; sourceTree = "<group>"; };
+		FE2B4A0F1D7B9C87008083AE /* core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
+		FE2B4A101D7B9C87008083AE /* custom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = custom.h; sourceTree = "<group>"; };
+		FE2B4A111D7B9C87008083AE /* drawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawing.h; sourceTree = "<group>"; };
+		FE2B4A121D7B9C87008083AE /* format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = format.h; sourceTree = "<group>"; };
+		FE2B4A131D7B9C87008083AE /* hash_table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hash_table.h; sourceTree = "<group>"; };
+		FE2B4A141D7B9C87008083AE /* packager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = packager.h; sourceTree = "<group>"; };
+		FE2B4A151D7B9C87008083AE /* relationships.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = relationships.h; sourceTree = "<group>"; };
+		FE2B4A161D7B9C87008083AE /* shared_strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shared_strings.h; sourceTree = "<group>"; };
+		FE2B4A171D7B9C87008083AE /* styles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = styles.h; sourceTree = "<group>"; };
+		FE2B4A181D7B9C87008083AE /* theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = theme.h; sourceTree = "<group>"; };
+		FE2B4A1A1D7B9C87008083AE /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		FE2B4A1B1D7B9C87008083AE /* queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = queue.h; sourceTree = "<group>"; };
+		FE2B4A1C1D7B9C87008083AE /* tmpfileplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmpfileplus.h; sourceTree = "<group>"; };
+		FE2B4A1D1D7B9C87008083AE /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
+		FE2B4A1E1D7B9C87008083AE /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		FE2B4A1F1D7B9C87008083AE /* utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utility.h; sourceTree = "<group>"; };
+		FE2B4A201D7B9C87008083AE /* workbook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = workbook.h; sourceTree = "<group>"; };
+		FE2B4A211D7B9C87008083AE /* worksheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = worksheet.h; sourceTree = "<group>"; };
+		FE2B4A221D7B9C87008083AE /* xmlwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xmlwriter.h; sourceTree = "<group>"; };
+		FE2B4A231D7B9C87008083AE /* xlsxwriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xlsxwriter.h; sourceTree = "<group>"; };
+		FE2B4A251D7B9C87008083AE /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FE2B4A261D7B9C87008083AE /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		FE2B4A281D7B9C87008083AE /* app.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = app.c; sourceTree = "<group>"; };
+		FE2B4A291D7B9C87008083AE /* chart.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = chart.c; sourceTree = "<group>"; };
+		FE2B4A2A1D7B9C87008083AE /* content_types.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = content_types.c; sourceTree = "<group>"; };
+		FE2B4A2B1D7B9C87008083AE /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
+		FE2B4A2C1D7B9C87008083AE /* custom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = custom.c; sourceTree = "<group>"; };
+		FE2B4A2D1D7B9C87008083AE /* drawing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = drawing.c; sourceTree = "<group>"; };
+		FE2B4A2E1D7B9C87008083AE /* format.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = format.c; sourceTree = "<group>"; };
+		FE2B4A2F1D7B9C87008083AE /* hash_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hash_table.c; sourceTree = "<group>"; };
+		FE2B4A301D7B9C87008083AE /* packager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = packager.c; sourceTree = "<group>"; };
+		FE2B4A311D7B9C87008083AE /* relationships.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = relationships.c; sourceTree = "<group>"; };
+		FE2B4A321D7B9C87008083AE /* shared_strings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shared_strings.c; sourceTree = "<group>"; };
+		FE2B4A331D7B9C87008083AE /* styles.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = styles.c; sourceTree = "<group>"; };
+		FE2B4A341D7B9C87008083AE /* theme.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = theme.c; sourceTree = "<group>"; };
+		FE2B4A351D7B9C87008083AE /* utility.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utility.c; sourceTree = "<group>"; };
+		FE2B4A361D7B9C87008083AE /* workbook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = workbook.c; sourceTree = "<group>"; };
+		FE2B4A371D7B9C87008083AE /* worksheet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = worksheet.c; sourceTree = "<group>"; };
+		FE2B4A381D7B9C87008083AE /* xmlwriter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = xmlwriter.c; sourceTree = "<group>"; };
+		FE2B4A3B1D7B9C87008083AE /* tmpfileplus.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tmpfileplus.c; sourceTree = "<group>"; };
+		FE2B4A3C1D7B9C87008083AE /* tmpfileplus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tmpfileplus.h; sourceTree = "<group>"; };
+		FE2B4A531D7B9E49008083AE /* HTCSVFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTCSVFileHandler.h; path = HTSpreadSheetWrapper/HTCSVFileHandler.h; sourceTree = "<group>"; };
+		FE2B4A541D7B9E49008083AE /* HTCSVFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTCSVFileHandler.m; path = HTSpreadSheetWrapper/HTCSVFileHandler.m; sourceTree = "<group>"; };
+		FE2B4A551D7B9E49008083AE /* HTSpreadSheetWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTSpreadSheetWrapper.h; path = HTSpreadSheetWrapper/HTSpreadSheetWrapper.h; sourceTree = "<group>"; };
+		FE2B4A561D7B9E49008083AE /* HTXLSXFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTXLSXFileHandler.h; path = HTSpreadSheetWrapper/HTXLSXFileHandler.h; sourceTree = "<group>"; };
+		FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTXLSXFileHandler.m; path = HTSpreadSheetWrapper/HTXLSXFileHandler.m; sourceTree = "<group>"; };
+		FEDB462F1D7BA3F1003D885D /* ViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerModel.h; sourceTree = "<group>"; };
+		FEDB46301D7BA3F1003D885D /* ViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2B4A5A1D7B9EA2008083AE /* XlsxReaderWriter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,9 +164,9 @@
 				FE2B488E1D7B9AF9008083AE /* AppDelegate.m */,
 				FE2B48931D7B9AF9008083AE /* ViewController.h */,
 				FE2B48941D7B9AF9008083AE /* ViewController.m */,
-				FE2B48961D7B9AF9008083AE /* Assets.xcassets */,
-				FE2B48981D7B9AF9008083AE /* Main.storyboard */,
-				FE2B489B1D7B9AF9008083AE /* Info.plist */,
+				FEDB462F1D7BA3F1003D885D /* ViewControllerModel.h */,
+				FEDB46301D7BA3F1003D885D /* ViewControllerModel.m */,
+				FE2B49F81D7B9C33008083AE /* HTSpreadSheetWrapper */,
 				FE2B48901D7B9AF9008083AE /* Supporting Files */,
 			);
 			path = CreatingXLSXFiles;
@@ -71,9 +175,154 @@
 		FE2B48901D7B9AF9008083AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FE2B48A11D7B9B4D008083AE /* UI */,
 				FE2B48911D7B9AF9008083AE /* main.m */,
+				FE2B489B1D7B9AF9008083AE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE2B48A11D7B9B4D008083AE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B48961D7B9AF9008083AE /* Assets.xcassets */,
+				FE2B48981D7B9AF9008083AE /* Main.storyboard */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		FE2B49F81D7B9C33008083AE /* HTSpreadSheetWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A531D7B9E49008083AE /* HTCSVFileHandler.h */,
+				FE2B4A541D7B9E49008083AE /* HTCSVFileHandler.m */,
+				FE2B4A551D7B9E49008083AE /* HTSpreadSheetWrapper.h */,
+				FE2B4A561D7B9E49008083AE /* HTXLSXFileHandler.h */,
+				FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */,
+				FE2B4A071D7B9C87008083AE /* libxlsxwriter */,
+				FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */,
+			);
+			name = HTSpreadSheetWrapper;
+			sourceTree = "<group>";
+		};
+		FE2B49FB1D7B9C66008083AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A021D7B9C66008083AE /* libXlsxReaderWriter.a */,
+				FE2B4A041D7B9C66008083AE /* XlsxReaderWriterTests.xctest */,
+				FE2B4A061D7B9C66008083AE /* XlsxReaderWriter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE2B4A071D7B9C87008083AE /* libxlsxwriter */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A081D7B9C87008083AE /* Changes.txt */,
+				FE2B4A091D7B9C87008083AE /* include */,
+				FE2B4A241D7B9C87008083AE /* lib */,
+				FE2B4A261D7B9C87008083AE /* LICENSE.txt */,
+				FE2B4A271D7B9C87008083AE /* src */,
+				FE2B4A391D7B9C87008083AE /* third_party */,
+			);
+			name = libxlsxwriter;
+			path = HTSpreadSheetWrapper/libxlsxwriter;
+			sourceTree = "<group>";
+		};
+		FE2B4A091D7B9C87008083AE /* include */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A0A1D7B9C87008083AE /* xlsxwriter */,
+				FE2B4A231D7B9C87008083AE /* xlsxwriter.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		FE2B4A0A1D7B9C87008083AE /* xlsxwriter */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A0B1D7B9C87008083AE /* app.h */,
+				FE2B4A0C1D7B9C87008083AE /* chart.h */,
+				FE2B4A0D1D7B9C87008083AE /* common.h */,
+				FE2B4A0E1D7B9C87008083AE /* content_types.h */,
+				FE2B4A0F1D7B9C87008083AE /* core.h */,
+				FE2B4A101D7B9C87008083AE /* custom.h */,
+				FE2B4A111D7B9C87008083AE /* drawing.h */,
+				FE2B4A121D7B9C87008083AE /* format.h */,
+				FE2B4A131D7B9C87008083AE /* hash_table.h */,
+				FE2B4A141D7B9C87008083AE /* packager.h */,
+				FE2B4A151D7B9C87008083AE /* relationships.h */,
+				FE2B4A161D7B9C87008083AE /* shared_strings.h */,
+				FE2B4A171D7B9C87008083AE /* styles.h */,
+				FE2B4A181D7B9C87008083AE /* theme.h */,
+				FE2B4A191D7B9C87008083AE /* third_party */,
+				FE2B4A1F1D7B9C87008083AE /* utility.h */,
+				FE2B4A201D7B9C87008083AE /* workbook.h */,
+				FE2B4A211D7B9C87008083AE /* worksheet.h */,
+				FE2B4A221D7B9C87008083AE /* xmlwriter.h */,
+			);
+			path = xlsxwriter;
+			sourceTree = "<group>";
+		};
+		FE2B4A191D7B9C87008083AE /* third_party */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A1A1D7B9C87008083AE /* ioapi.h */,
+				FE2B4A1B1D7B9C87008083AE /* queue.h */,
+				FE2B4A1C1D7B9C87008083AE /* tmpfileplus.h */,
+				FE2B4A1D1D7B9C87008083AE /* tree.h */,
+				FE2B4A1E1D7B9C87008083AE /* zip.h */,
+			);
+			path = third_party;
+			sourceTree = "<group>";
+		};
+		FE2B4A241D7B9C87008083AE /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A251D7B9C87008083AE /* .gitignore */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		FE2B4A271D7B9C87008083AE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A281D7B9C87008083AE /* app.c */,
+				FE2B4A291D7B9C87008083AE /* chart.c */,
+				FE2B4A2A1D7B9C87008083AE /* content_types.c */,
+				FE2B4A2B1D7B9C87008083AE /* core.c */,
+				FE2B4A2C1D7B9C87008083AE /* custom.c */,
+				FE2B4A2D1D7B9C87008083AE /* drawing.c */,
+				FE2B4A2E1D7B9C87008083AE /* format.c */,
+				FE2B4A2F1D7B9C87008083AE /* hash_table.c */,
+				FE2B4A301D7B9C87008083AE /* packager.c */,
+				FE2B4A311D7B9C87008083AE /* relationships.c */,
+				FE2B4A321D7B9C87008083AE /* shared_strings.c */,
+				FE2B4A331D7B9C87008083AE /* styles.c */,
+				FE2B4A341D7B9C87008083AE /* theme.c */,
+				FE2B4A351D7B9C87008083AE /* utility.c */,
+				FE2B4A361D7B9C87008083AE /* workbook.c */,
+				FE2B4A371D7B9C87008083AE /* worksheet.c */,
+				FE2B4A381D7B9C87008083AE /* xmlwriter.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FE2B4A391D7B9C87008083AE /* third_party */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A3A1D7B9C87008083AE /* tmpfileplus */,
+			);
+			path = third_party;
+			sourceTree = "<group>";
+		};
+		FE2B4A3A1D7B9C87008083AE /* tmpfileplus */ = {
+			isa = PBXGroup;
+			children = (
+				FE2B4A3B1D7B9C87008083AE /* tmpfileplus.c */,
+				FE2B4A3C1D7B9C87008083AE /* tmpfileplus.h */,
+			);
+			path = tmpfileplus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +370,12 @@
 			mainGroup = FE2B48811D7B9AF9008083AE;
 			productRefGroup = FE2B488B1D7B9AF9008083AE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FE2B49FB1D7B9C66008083AE /* Products */;
+					ProjectRef = FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FE2B48891D7B9AF9008083AE /* CreatingXLSXFiles */,
@@ -128,12 +383,39 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		FE2B4A021D7B9C66008083AE /* libXlsxReaderWriter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libXlsxReaderWriter.a;
+			remoteRef = FE2B4A011D7B9C66008083AE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE2B4A041D7B9C66008083AE /* XlsxReaderWriterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = XlsxReaderWriterTests.xctest;
+			remoteRef = FE2B4A031D7B9C66008083AE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FE2B4A061D7B9C66008083AE /* XlsxReaderWriter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XlsxReaderWriter.framework;
+			remoteRef = FE2B4A051D7B9C66008083AE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		FE2B48881D7B9AF9008083AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2B4A3E1D7B9C87008083AE /* .gitignore in Resources */,
+				FE2B4A3D1D7B9C87008083AE /* Changes.txt in Resources */,
 				FE2B48971D7B9AF9008083AE /* Assets.xcassets in Resources */,
+				FE2B4A3F1D7B9C87008083AE /* LICENSE.txt in Resources */,
 				FE2B489A1D7B9AF9008083AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,9 +427,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2B4A461D7B9C87008083AE /* format.c in Sources */,
 				FE2B48951D7B9AF9008083AE /* ViewController.m in Sources */,
+				FE2B4A421D7B9C87008083AE /* content_types.c in Sources */,
 				FE2B48921D7B9AF9008083AE /* main.m in Sources */,
+				FE2B4A431D7B9C87008083AE /* core.c in Sources */,
+				FE2B4A481D7B9C87008083AE /* packager.c in Sources */,
+				FE2B4A4B1D7B9C87008083AE /* styles.c in Sources */,
+				FE2B4A441D7B9C87008083AE /* custom.c in Sources */,
+				FE2B4A411D7B9C87008083AE /* chart.c in Sources */,
+				FE2B4A4E1D7B9C87008083AE /* workbook.c in Sources */,
+				FE2B4A501D7B9C87008083AE /* xmlwriter.c in Sources */,
+				FE2B4A4F1D7B9C87008083AE /* worksheet.c in Sources */,
 				FE2B488F1D7B9AF9008083AE /* AppDelegate.m in Sources */,
+				FE2B4A4D1D7B9C87008083AE /* utility.c in Sources */,
+				FE2B4A591D7B9E49008083AE /* HTXLSXFileHandler.m in Sources */,
+				FE2B4A4A1D7B9C87008083AE /* shared_strings.c in Sources */,
+				FEDB46311D7BA3F1003D885D /* ViewControllerModel.m in Sources */,
+				FE2B4A4C1D7B9C87008083AE /* theme.c in Sources */,
+				FE2B4A471D7B9C87008083AE /* hash_table.c in Sources */,
+				FE2B4A451D7B9C87008083AE /* drawing.c in Sources */,
+				FE2B4A511D7B9C87008083AE /* tmpfileplus.c in Sources */,
+				FE2B4A401D7B9C87008083AE /* app.c in Sources */,
+				FE2B4A491D7B9C87008083AE /* relationships.c in Sources */,
+				FE2B4A581D7B9E49008083AE /* HTCSVFileHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +554,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/libxlsxwriter/include",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/XlsxReaderWriter\\ Mac",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/XlsxReaderWriter",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/ThirdParties/**",
+				);
 				INFOPLIST_FILE = CreatingXLSXFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app4u.CreatingXLSXFiles;
@@ -263,6 +572,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/libxlsxwriter/include",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/XlsxReaderWriter\\ Mac",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/XlsxReaderWriter",
+					"$(SRCROOT)/$(PRODUCT_NAME)/HTSpreadSheetWrapper/XlsxReaderWriter/ThirdParties/**",
+				);
 				INFOPLIST_FILE = CreatingXLSXFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app4u.CreatingXLSXFiles;
@@ -289,6 +604,7 @@
 				FE2B48A01D7B9AF9008083AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
