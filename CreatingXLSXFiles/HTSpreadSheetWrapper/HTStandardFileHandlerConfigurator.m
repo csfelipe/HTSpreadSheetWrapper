@@ -23,15 +23,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "HTCSVFileHandlerConfigurator.h"
+#import "HTStandardFileHandlerConfigurator.h"
 
-@interface HTCSVFileHandlerConfigurator ()
+@interface HTStandardFileHandlerConfigurator ()
 @property (nonatomic,strong) NSArray  *currentFileKeys;
 @property (nonatomic,strong) NSString *currentDescriptorKey;
 @property (nonatomic,strong) NSNumber *currentDescriptorKeyIndex;
 @end
 
-@implementation HTCSVFileHandlerConfigurator
+@implementation HTStandardFileHandlerConfigurator
 
 - (void)fileKeys:(NSArray*)keys {
     self.currentFileKeys = [keys copy];

@@ -30,7 +30,7 @@ static NSString * const CSV_EXTENSION = @"csv";
 static NSString * const CSV_SEPARATOR = @"|#|";
 
 @interface HTCSVFileHandler ()
-@property (nonatomic,strong) HTCSVFileHandlerConfigurator *configurator;
+@property (nonatomic,strong) HTStandardFileHandlerConfigurator *configurator;
 @end
 
 @implementation HTCSVFileHandler
@@ -54,7 +54,7 @@ static NSString * const CSV_SEPARATOR = @"|#|";
     return self;
 }
 
-- (void)setupConfigurator:(HTCSVFileHandlerConfigurator*)configurator {
+- (void)setupConfigurator:(HTStandardFileHandlerConfigurator*)configurator {
     self.configurator = configurator;
 }
 

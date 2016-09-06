@@ -25,7 +25,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTCSVFileHandlerConfigurator : NSObject
+@interface HTStandardFileHandlerConfigurator : NSObject
 - (void)fileKeys:(NSArray*)keys;
 - (void)fileKeysFromContent:(NSArray*)content;
 - (void)descriptorKey:(NSString*)key;

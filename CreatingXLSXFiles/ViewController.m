@@ -27,7 +27,7 @@
     // Updating a XLSX file
     //    NSArray *content    = [model fakeTesteCase];
     //    //to be able to update you needd to have the use the same name of the file you intend to update
-    //    NSString *name      = @"xlsx_example-201609031829";
+    //    NSString *name      = @"xlsx_example-201609060734";
     //    //to be able to update you needd to have the use the same path of the file you intend to update
     //    NSString *path      = @"Randomic/Test/Path";
     //    [self updateXLSXFileWithTitle:name name:name customPath:path andContent:content];
@@ -51,7 +51,14 @@
                            name:(NSString*)name
                      customPath:(NSString*)path
                      andContent:(NSArray*)content {
+    
+    HTXLSXFileHandlerConfigurator *configurator = [[HTXLSXFileHandlerConfigurator alloc]init];
+    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    [configurator descriptorKey:@"tabId"];
+    [configurator fileTitles:@[@"TAB ID",@"THE DATE",@"A STATE",@"ANY DESCRIPTION"]];
+    
     HTXLSXFileHandler *fileHandler = [HTXLSXFileHandler new];
+    [fileHandler setupConfigurator:configurator];
     [fileHandler setupFileWithTitle:title outputName:name andCustomPath:path];
     [fileHandler content:content];
     [fileHandler create];
@@ -62,7 +69,13 @@
                            name:(NSString*)name
                      customPath:(NSString*)path
                      andContent:(NSArray*)content {
+    HTXLSXFileHandlerConfigurator *configurator = [[HTXLSXFileHandlerConfigurator alloc]init];
+    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    [configurator descriptorKey:@"tabId"];
+    [configurator fileTitles:@[@"TAB ID",@"THE DATE",@"A STATE",@"ANY DESCRIPTION"]];
+    
     HTXLSXFileHandler *fileHandler = [HTXLSXFileHandler new];
+    [fileHandler setupConfigurator:configurator];
     [fileHandler setupFileWithTitle:title outputName:name andCustomPath:path];
     [fileHandler content:content];
     [fileHandler update];
@@ -75,21 +88,21 @@
                     andContent:(NSArray*)content {
 
     // Setting Configurator with keys and specific key index
-    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    HTStandardFileHandlerConfigurator *configurator = [[HTStandardFileHandlerConfigurator alloc]init];
     //    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
     //    [configurator descriptorKeyIndex:@(0)];
 
     // Setting Configurator with keys and specific key
-    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    HTStandardFileHandlerConfigurator *configurator = [[HTStandardFileHandlerConfigurator alloc]init];
     //    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
     //    [configurator descriptorKey:@"state"];
     
     // Setting Configurator with keys from content array (must be <NSArray<NSDictionary*>*>) and specific key
-    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    HTStandardFileHandlerConfigurator *configurator = [[HTStandardFileHandlerConfigurator alloc]init];
     //    [configurator fileKeysFromContent:content];
     //    [configurator descriptorKey:@"description"];
     
-    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    HTStandardFileHandlerConfigurator *configurator = [[HTStandardFileHandlerConfigurator alloc]init];
     [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
     [configurator descriptorKey:@"tabId"];
     
@@ -105,7 +118,7 @@
                     customPath:(NSString*)path
                     andContent:(NSArray*)content {
     
-    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    HTStandardFileHandlerConfigurator *configurator = [[HTStandardFileHandlerConfigurator alloc]init];
     [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
     [configurator descriptorKey:@"tabId"];
     

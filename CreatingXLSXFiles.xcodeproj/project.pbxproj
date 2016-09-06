@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE1A76301D7E4331008098CE /* HTCSVFileHandlerConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1A762F1D7E4331008098CE /* HTCSVFileHandlerConfigurator.m */; };
+		FE1A76301D7E4331008098CE /* HTStandardFileHandlerConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE1A762F1D7E4331008098CE /* HTStandardFileHandlerConfigurator.m */; };
 		FE2B488F1D7B9AF9008083AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B488E1D7B9AF9008083AE /* AppDelegate.m */; };
 		FE2B48921D7B9AF9008083AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B48911D7B9AF9008083AE /* main.m */; };
 		FE2B48951D7B9AF9008083AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B48941D7B9AF9008083AE /* ViewController.m */; };
@@ -37,6 +37,7 @@
 		FE2B4A581D7B9E49008083AE /* HTCSVFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A541D7B9E49008083AE /* HTCSVFileHandler.m */; };
 		FE2B4A591D7B9E49008083AE /* HTXLSXFileHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */; };
 		FE2B4A5A1D7B9EA2008083AE /* XlsxReaderWriter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2B4A061D7B9C66008083AE /* XlsxReaderWriter.framework */; };
+		FE2F121F1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = FE2F121E1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.m */; };
 		FEDB46311D7BA3F1003D885D /* ViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDB46301D7BA3F1003D885D /* ViewControllerModel.m */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FE1A762E1D7E4331008098CE /* HTCSVFileHandlerConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTCSVFileHandlerConfigurator.h; path = HTSpreadSheetWrapper/HTCSVFileHandlerConfigurator.h; sourceTree = "<group>"; };
-		FE1A762F1D7E4331008098CE /* HTCSVFileHandlerConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTCSVFileHandlerConfigurator.m; path = HTSpreadSheetWrapper/HTCSVFileHandlerConfigurator.m; sourceTree = "<group>"; };
+		FE1A762E1D7E4331008098CE /* HTStandardFileHandlerConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTStandardFileHandlerConfigurator.h; path = HTSpreadSheetWrapper/HTStandardFileHandlerConfigurator.h; sourceTree = "<group>"; };
+		FE1A762F1D7E4331008098CE /* HTStandardFileHandlerConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTStandardFileHandlerConfigurator.m; path = HTSpreadSheetWrapper/HTStandardFileHandlerConfigurator.m; sourceTree = "<group>"; };
 		FE2B488A1D7B9AF9008083AE /* CreatingXLSXFiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreatingXLSXFiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2B488D1D7B9AF9008083AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FE2B488E1D7B9AF9008083AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +129,8 @@
 		FE2B4A551D7B9E49008083AE /* HTSpreadSheetWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTSpreadSheetWrapper.h; path = HTSpreadSheetWrapper/HTSpreadSheetWrapper.h; sourceTree = "<group>"; };
 		FE2B4A561D7B9E49008083AE /* HTXLSXFileHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTXLSXFileHandler.h; path = HTSpreadSheetWrapper/HTXLSXFileHandler.h; sourceTree = "<group>"; };
 		FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTXLSXFileHandler.m; path = HTSpreadSheetWrapper/HTXLSXFileHandler.m; sourceTree = "<group>"; };
+		FE2F121D1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTXLSXFileHandlerConfigurator.h; path = HTSpreadSheetWrapper/HTXLSXFileHandlerConfigurator.h; sourceTree = "<group>"; };
+		FE2F121E1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTXLSXFileHandlerConfigurator.m; path = HTSpreadSheetWrapper/HTXLSXFileHandlerConfigurator.m; sourceTree = "<group>"; };
 		FEDB462F1D7BA3F1003D885D /* ViewControllerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerModel.h; sourceTree = "<group>"; };
 		FEDB46301D7BA3F1003D885D /* ViewControllerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,11 +202,13 @@
 			children = (
 				FE2B4A531D7B9E49008083AE /* HTCSVFileHandler.h */,
 				FE2B4A541D7B9E49008083AE /* HTCSVFileHandler.m */,
-				FE1A762E1D7E4331008098CE /* HTCSVFileHandlerConfigurator.h */,
-				FE1A762F1D7E4331008098CE /* HTCSVFileHandlerConfigurator.m */,
+				FE1A762E1D7E4331008098CE /* HTStandardFileHandlerConfigurator.h */,
+				FE1A762F1D7E4331008098CE /* HTStandardFileHandlerConfigurator.m */,
 				FE2B4A551D7B9E49008083AE /* HTSpreadSheetWrapper.h */,
 				FE2B4A561D7B9E49008083AE /* HTXLSXFileHandler.h */,
 				FE2B4A571D7B9E49008083AE /* HTXLSXFileHandler.m */,
+				FE2F121D1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.h */,
+				FE2F121E1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.m */,
 				FE2B4A071D7B9C87008083AE /* libxlsxwriter */,
 				FE2B49FA1D7B9C66008083AE /* XlsxReaderWriter.xcodeproj */,
 			);
@@ -444,7 +449,7 @@
 				FE2B4A4E1D7B9C87008083AE /* workbook.c in Sources */,
 				FE2B4A501D7B9C87008083AE /* xmlwriter.c in Sources */,
 				FE2B4A4F1D7B9C87008083AE /* worksheet.c in Sources */,
-				FE1A76301D7E4331008098CE /* HTCSVFileHandlerConfigurator.m in Sources */,
+				FE1A76301D7E4331008098CE /* HTStandardFileHandlerConfigurator.m in Sources */,
 				FE2B488F1D7B9AF9008083AE /* AppDelegate.m in Sources */,
 				FE2B4A4D1D7B9C87008083AE /* utility.c in Sources */,
 				FE2B4A591D7B9E49008083AE /* HTXLSXFileHandler.m in Sources */,
@@ -454,6 +459,7 @@
 				FE2B4A471D7B9C87008083AE /* hash_table.c in Sources */,
 				FE2B4A451D7B9C87008083AE /* drawing.c in Sources */,
 				FE2B4A511D7B9C87008083AE /* tmpfileplus.c in Sources */,
+				FE2F121F1D7E7EC90062F47D /* HTXLSXFileHandlerConfigurator.m in Sources */,
 				FE2B4A401D7B9C87008083AE /* app.c in Sources */,
 				FE2B4A491D7B9C87008083AE /* relationships.c in Sources */,
 				FE2B4A581D7B9E49008083AE /* HTCSVFileHandler.m in Sources */,

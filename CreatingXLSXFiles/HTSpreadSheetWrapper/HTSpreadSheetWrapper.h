@@ -28,7 +28,8 @@
 
 #import "HTXLSXFileHandler.h"
 #import "HTCSVFileHandler.h"
-#import "HTCSVFileHandlerConfigurator.h"
+#import "HTStandardFileHandlerConfigurator.h"
+#import "HTXLSXFileHandlerConfigurator.h"
 #endif /* HTSpreadSheetWrapper_h */
 
 

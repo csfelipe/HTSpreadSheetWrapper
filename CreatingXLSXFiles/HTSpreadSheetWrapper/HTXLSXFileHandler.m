@@ -33,6 +33,10 @@ static NSString * const XLSX_SECTION_TITLE_DATE         = @"DATE";
 static NSString * const XLSX_SECTION_TITLE_STATE        = @"STATE";
 static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
 
+@interface HTXLSXFileHandler ()
+@property (nonatomic,strong) HTXLSXFileHandlerConfigurator *configurator;
+@end
+
 @implementation HTXLSXFileHandler
 
 #pragma mark - Initialization & Life Cycle
@@ -52,6 +56,10 @@ static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
         [self privateInit];
     }
     return self;
+}
+
+- (void)setupConfigurator:(HTXLSXFileHandlerConfigurator *)configurator {
+    self.configurator = configurator;
 }
 
 - (void)setupFileWithTitle:(NSString*)title {
@@ -130,41 +138,46 @@ static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
 }
 
 - (void)setup {
+    if (!self.configurator) {
+        NSAssert(NO, @"Configurator must be initialized");
+    }
+    
     int row = 0;
     lxw_workbook  *workbook  = new_workbook([self.outputFilePath fileSystemRepresentation]);
     lxw_worksheet *worksheet = NULL;
     lxw_format    *bold      = workbook_add_format(workbook);
     format_set_bold(bold);
     
-    NSString *lastTesCaseId = @"";
+    NSString *lastDescriptor = @"";
     NSMutableArray *sortedContent = [[self sortedContent] copy];
     for (int i=0; i<_content.count; i++) {
         NSDictionary *aDictionary   = sortedContent[i];
-        NSString *testCaseId        = aDictionary[@"tabId"];
-        NSString *date              = aDictionary[@"date"];
-        NSString *state             = aDictionary[@"state"];
-        NSString *description       = aDictionary[@"description"];
-        
-        if (![testCaseId isEqualToString:lastTesCaseId]) {
-            row = 0;
-            lastTesCaseId = [testCaseId copy];
-            worksheet = workbook_add_worksheet(workbook, testCaseId.UTF8String);
-            worksheet_write_string(worksheet, row, 0, XLSX_SECTION_TITLE_TEST_CASE.UTF8String,  bold);
-            worksheet_write_string(worksheet, row, 1, XLSX_SECTION_TITLE_DATE.UTF8String,       bold);
-            worksheet_write_string(worksheet, row, 2, XLSX_SECTION_TITLE_STATE.UTF8String,      bold);
-            worksheet_write_string(worksheet, row, 3, XLSX_SECTION_TITLE_DESC.UTF8String,       bold);
+        NSString *currentDescriptor = aDictionary[[[self configurator] key]];
+        if (![currentDescriptor isEqualToString:lastDescriptor]) {
+            row             = 0;
+            lastDescriptor  = [currentDescriptor copy];
+            worksheet       = workbook_add_worksheet(workbook, currentDescriptor.UTF8String);
+            
+            for (int j=0; j<[[self configurator]titles].count; j++) {
+                NSString *aTitle = self.configurator.titles[j];
+                worksheet_write_string(worksheet, row, j, aTitle.UTF8String, bold);
+            }
         }
         
         row++;
-        worksheet_write_string(worksheet, row, 0, testCaseId.UTF8String,  NULL);
-        worksheet_write_string(worksheet, row, 1, date.UTF8String,        NULL);
-        worksheet_write_string(worksheet, row, 2, state.UTF8String,       NULL);
-        worksheet_write_string(worksheet, row, 3, description.UTF8String, NULL);
+        for (int k=0; k<[[self configurator]keys].count; k++) {
+            NSString *aKey = self.configurator.keys[k];
+            NSString *aValue = aDictionary[aKey];
+            worksheet_write_string(worksheet, row, k, aValue.UTF8String,  NULL);
+        }
     }
     workbook_close(workbook);
 }
 
 - (void)update {
+    if (!self.configurator) {
+        NSAssert(NO, @"Configurator must be initialized");
+    }
     //get spreadsheet
     BRAOfficeDocumentPackage *spreadsheet = [BRAOfficeDocumentPackage open:self.outputFilePath];
     //get possible new sheet names
@@ -192,40 +205,38 @@ static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
     NSDictionary *indexInfo       = [self informationOnIndexMatchForSpreadsheet:spreadsheet];
     int row                       = 0;
     NSMutableArray *sortedContent = [[self sortedContent] copy];
-    NSString *lastTestCaseId      = @"";
+    NSString *lastDescriptor      = @"";
     NSNumber *index               = @(1);
     BRAWorksheet *aWorkSheet      = nil;
     
     //fills in the sheet
     for (int i=0; i<_content.count; i++) {
         NSDictionary *aDictionary   = sortedContent[i];
-        NSString *testCaseId        = aDictionary[@"tabId"];
-        NSString *date              = aDictionary[@"date"];
-        NSString *state             = aDictionary[@"state"];
-        NSString *description       = aDictionary[@"description"];
-        
-        if (![lastTestCaseId isEqualToString:testCaseId]) {
-            lastTestCaseId = [testCaseId copy];
-            index          = indexInfo[testCaseId];
+        NSString *currentDescriptor = aDictionary[[[self configurator]key]];
+        if (![lastDescriptor isEqualToString:currentDescriptor]) {
+            lastDescriptor = [currentDescriptor copy];
+            index          = indexInfo[lastDescriptor];
             aWorkSheet     = spreadsheet.workbook.worksheets[index.intValue];
             row            = [self nextAvailableRowForSheet:aWorkSheet];
             //creating the header row in case this sheet is new
             if (row == 1) {
-                [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"A%@", @(row)] shouldCreate:YES] setStringValue:XLSX_SECTION_TITLE_TEST_CASE];
-                [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"B%@", @(row)] shouldCreate:YES] setStringValue:XLSX_SECTION_TITLE_DATE];
-                [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"C%@", @(row)] shouldCreate:YES] setStringValue:XLSX_SECTION_TITLE_STATE];
-                [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"D%@", @(row)] shouldCreate:YES] setStringValue:XLSX_SECTION_TITLE_DESC];
+                for (int j=0; j<[[self configurator]titles].count; j++) {
+                    NSString *aTitle        = [[self configurator]titles][j];
+                    NSString *cellReference = [NSString stringWithFormat:@"%@%@", [self columnBasedOnIndex:j],@(row)];
+                    [[aWorkSheet cellForCellReference:cellReference shouldCreate:YES] setStringValue:aTitle];
+                }
                 row++;
             }
-            
         } else {
             row++;
         }
-
-        [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"A%@", @(row)] shouldCreate:YES] setStringValue:testCaseId];
-        [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"B%@", @(row)] shouldCreate:YES] setStringValue:date];
-        [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"C%@", @(row)] shouldCreate:YES] setStringValue:state];
-        [[aWorkSheet cellForCellReference:[NSString stringWithFormat:@"D%@", @(row)] shouldCreate:YES] setStringValue:description];
+        
+        for (int k=0; k<[[self configurator]keys].count; k++) {
+            NSString *aKey          = [[self configurator]keys][k];
+            NSString *aValue        = aDictionary[aKey];
+            NSString *cellReference = [NSString stringWithFormat:@"%@%@", [self columnBasedOnIndex:k],@(row)];
+            [[aWorkSheet cellForCellReference:cellReference shouldCreate:YES] setStringValue:aValue];
+        }
     }
     
     //saving all changes in the sheet
@@ -282,23 +293,25 @@ static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
 }
 
 - (NSArray<NSString*>*)titlesForWorkSheets {
-    NSString *lastTesCaseId = @"";
-    NSMutableArray *sortedContent = [[self sortedContent] copy];
-    NSMutableArray *uniqueTitles   = [[NSMutableArray alloc]init];
+    NSString *lastDescriptorValue  = @"";
+    NSMutableArray *sortedContent  = [[self sortedContent] copy];
+    NSMutableArray *uniqueNewTabs  = [[NSMutableArray alloc]init];
+    
     for (int i=0; i<_content.count; i++) {
         NSDictionary *aDictionary   = sortedContent[i];
-        NSString *testCaseId        = aDictionary[@"tabId"];
-        if (![testCaseId isEqualToString:lastTesCaseId]) {
-            lastTesCaseId = testCaseId;
-            [uniqueTitles addObject:lastTesCaseId];
+        NSString *currentDescriptor        = aDictionary[[[self configurator] key]];
+        if (![currentDescriptor isEqualToString:lastDescriptorValue]) {
+            lastDescriptorValue = currentDescriptor;
+            [uniqueNewTabs addObject:lastDescriptorValue];
         }
     }
-    return uniqueTitles;
+    return uniqueNewTabs;
 }
 
 - (NSMutableArray*)sortedContent {
-    NSSortDescriptor *descriptor  = [[NSSortDescriptor alloc] initWithKey:@"tabId" ascending:YES];
+    NSSortDescriptor *descriptor  = [[NSSortDescriptor alloc] initWithKey:[self.configurator key] ascending:YES];
     return [[NSMutableArray alloc]initWithArray:[_content sortedArrayUsingDescriptors:@[descriptor]]];
+
 }
 
 - (NSString*)columnBasedOnIndex:(int)index {
@@ -318,7 +331,7 @@ static NSString * const XLSX_SECTION_TITLE_DESC         = @"DESCRIPTION";
             column = [NSString stringWithFormat:@"%c%@",(restOfIndex+65),column];
         }
         index = dividedIndex-1;
-        divisions = [NSString stringWithFormat:@"%@index(2): %@", divisions,@(index)];
+        divisions = [NSString stringWithFormat:@"%@%@", divisions,@(index)];
     }
     return column;
 }
