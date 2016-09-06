@@ -24,6 +24,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "HTCSVFileHandlerConfigurator.h"
 
 @protocol HTCSVFileHandlerProtocol <NSObject>
 @property (readonly, nonatomic, copy) NSString *title;
@@ -46,6 +47,7 @@
 @property (readonly, nonatomic, copy) NSString *customFilePath;
 @property (readonly, nonatomic, copy) NSString *outputFilePath;
 @property (readonly, nonatomic, strong) NSArray<NSDictionary*> *content;
+- (void)setupConfigurator:(HTCSVFileHandlerConfigurator*)configurator;
 - (void)setupFileWithTitle:(NSString*)title;
 - (void)setupFileWithTitle:(NSString*)title andOutputName:(NSString*)outputName;
 - (void)setupFileWithTitle:(NSString*)title andCustomPath:(NSString*)path;

@@ -41,7 +41,7 @@
     // Updating a CSV file
     //    NSArray *content    = [model fakeTesteCase];
     //    //to be able to update you needd to have the use the same name of the file you intend to update
-    //    NSString *name      = @"csv_example-201609031832";
+    //    NSString *name      = @"csv_example-201609051820";
     //    //to be able to update you needd to have the use the same path of the file you intend to update
     //    NSString *path      = @"Randomic/Test/Path";
     //    [self updateCSVFileWithTitle:name name:name customPath:path andContent:content];
@@ -73,7 +73,28 @@
                           name:(NSString*)name
                     customPath:(NSString*)path
                     andContent:(NSArray*)content {
+
+    // Setting Configurator with keys and specific key index
+    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    //    [configurator descriptorKeyIndex:@(0)];
+
+    // Setting Configurator with keys and specific key
+    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    //    [configurator descriptorKey:@"state"];
+    
+    // Setting Configurator with keys from content array (must be <NSArray<NSDictionary*>*>) and specific key
+    //    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    //    [configurator fileKeysFromContent:content];
+    //    [configurator descriptorKey:@"description"];
+    
+    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    [configurator descriptorKey:@"tabId"];
+    
     HTCSVFileHandler *file = [HTCSVFileHandler new];
+    [file setupConfigurator:configurator];
     [file setupFileWithTitle:title outputName:name andCustomPath:path];
     [file content:content];
     [file run];
@@ -83,7 +104,13 @@
                           name:(NSString*)name
                     customPath:(NSString*)path
                     andContent:(NSArray*)content {
+    
+    HTCSVFileHandlerConfigurator *configurator = [[HTCSVFileHandlerConfigurator alloc]init];
+    [configurator fileKeys:@[@"tabId",@"date",@"state",@"description"]];
+    [configurator descriptorKey:@"tabId"];
+    
     HTCSVFileHandler *file = [HTCSVFileHandler new];
+    [file setupConfigurator:configurator];
     [file setupFileWithTitle:title outputName:name andCustomPath:path];
     [file content:content];
     [file run];

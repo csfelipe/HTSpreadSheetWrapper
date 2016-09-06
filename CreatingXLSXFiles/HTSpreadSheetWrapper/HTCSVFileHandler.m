@@ -25,8 +25,13 @@
 
 #import "HTCSVFileHandler.h"
 
+
 static NSString * const CSV_EXTENSION = @"csv";
 static NSString * const CSV_SEPARATOR = @"|#|";
+
+@interface HTCSVFileHandler ()
+@property (nonatomic,strong) HTCSVFileHandlerConfigurator *configurator;
+@end
 
 @implementation HTCSVFileHandler
 #pragma mark - Initialization & Life Cycle
@@ -39,12 +44,18 @@ static NSString * const CSV_SEPARATOR = @"|#|";
     _content        = @[];
 }
 
+
+
 - (instancetype)init {
     self = [super init];
     if (self) {
         [self privateInit];
     }
     return self;
+}
+
+- (void)setupConfigurator:(HTCSVFileHandlerConfigurator*)configurator {
+    self.configurator = configurator;
 }
 
 - (void)setupFileWithTitle:(NSString*)title {
@@ -124,7 +135,11 @@ static NSString * const CSV_SEPARATOR = @"|#|";
 }
 
 - (void)setup {
-    NSSortDescriptor *descriptor  = [[NSSortDescriptor alloc] initWithKey:@"tabId" ascending:YES];
+    if (!self.configurator) {
+        NSAssert(NO, @"Configurator must be initialized");
+    }
+    
+    NSSortDescriptor *descriptor  = [[NSSortDescriptor alloc] initWithKey:[[self configurator] key] ascending:YES];
     NSMutableArray *sortedContent = [[NSMutableArray alloc]initWithArray:[_content sortedArrayUsingDescriptors:@[descriptor]]];
     
     NSString *csvString = @"";
@@ -134,14 +149,27 @@ static NSString * const CSV_SEPARATOR = @"|#|";
 
     for (int i=1; i<[sortedContent count]; i++) {
         NSDictionary *aDictionary   = sortedContent[i];
-        NSString *testCaseId        = aDictionary[@"tabId"];
-        NSString *date              = aDictionary[@"date"];
-        NSString *state             = aDictionary[@"state"];
-        NSString *description       = aDictionary[@"description"];
-        csvString = [csvString stringByAppendingFormat:@"%@%@%@%@%@%@%@\n", testCaseId,CSV_SEPARATOR,date,CSV_SEPARATOR,state,CSV_SEPARATOR,description];
+        //        NSString *testCaseId        = aDictionary[@"tabId"];
+        //        NSString *date              = aDictionary[@"date"];
+        //        NSString *state             = aDictionary[@"state"];
+        //        NSString *description       = aDictionary[@"description"];
+        
+        for (int j=0; j<[[self configurator]keys].count; j++) {
+            NSString *aKey  = self.configurator.keys[j];
+            NSString *aValue = aDictionary[aKey];
+            if (j==(self.configurator.keys.count-1)) {
+                csvString = [csvString stringByAppendingFormat:@"%@\n",aValue];
+            } else {
+                csvString = [csvString stringByAppendingFormat:@"%@,",aValue];
+            }
+        }
+        
+        //csvString = [csvString stringByAppendingFormat:@"%@%@%@%@%@%@%@\n", testCaseId,CSV_SEPARATOR,date,CSV_SEPARATOR,state,CSV_SEPARATOR,description];
     }
     
     [csvString writeToFile:self.outputFilePath atomically:YES encoding:NSUTF8StringEncoding error:NULL];
 }
+
+
 
 @end
